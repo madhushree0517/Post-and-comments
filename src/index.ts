@@ -39,7 +39,6 @@ app.get('/comments/:postId', async (req, res) => {
   const comments = await prisma.comment.findMany({ where: { postId } })
   res.json(comments)
 })
-//dfhbdfjh
 
 app.delete('/comments/:id', async (req, res) => {
   const id = parseInt(req.params.id)
@@ -47,7 +46,10 @@ app.delete('/comments/:id', async (req, res) => {
   res.json({ message: 'Comment deleted' })
 })
 
-const PORT = process.env.PORT || 3000
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running on http://0.0.0.0:${PORT}`)
-})
+// src/index.ts
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
+
