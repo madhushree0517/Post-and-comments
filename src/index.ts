@@ -39,6 +39,7 @@ app.get('/comments/:postId', async (req, res) => {
   const comments = await prisma.comment.findMany({ where: { postId } })
   res.json(comments)
 })
+//dfhbdfjh
 
 app.delete('/comments/:id', async (req, res) => {
   const id = parseInt(req.params.id)
